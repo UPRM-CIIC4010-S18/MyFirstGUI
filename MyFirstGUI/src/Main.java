@@ -10,6 +10,10 @@ public class Main {
 		
 		mainFrame.setTitle("My First GUI!!!");
 		
+		MyComponent carComponent = new MyComponent();
+		
+		mainFrame.add(carComponent);
+		
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		mainFrame.setVisible(true);
