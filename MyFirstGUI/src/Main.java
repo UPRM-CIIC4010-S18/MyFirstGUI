@@ -2,7 +2,7 @@ import javax.swing.JFrame;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		
 		JFrame mainFrame = new JFrame();
 		
@@ -17,6 +17,13 @@ public class Main {
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		mainFrame.setVisible(true);
+		
+		while(true) {
+			mainFrame.repaint();
+			
+			Thread.sleep(100);
+			
+		}
 	}
 	
 }
