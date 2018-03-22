@@ -36,7 +36,8 @@ public class MyComponent extends JComponent {
 		if (this.reachedLeftEdge(topLeftCar)) {
 			topLeftCar.setDirection(1);
 		}
-		topLeftCar.translate(5*topLeftCar.getDirection(), 0);
+		int pixelsToMove = rand.nextInt(10);
+		topLeftCar.translate(pixelsToMove*topLeftCar.getDirection(), 0);
 		
 		randomCar = new Car(rand.nextInt(this.getWidth()-60), rand.nextInt(this.getHeight()-30));
 		bottomRightCar = new Car(this.getWidth()-60, this.getHeight()-30);

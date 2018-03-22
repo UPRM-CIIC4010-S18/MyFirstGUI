@@ -21,7 +21,7 @@ public class Main {
 		while(true) {
 			mainFrame.repaint();
 			
-			Thread.sleep(10);
+			Thread.sleep(25);
 			
 		}
 	}
