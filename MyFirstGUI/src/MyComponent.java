@@ -20,14 +20,19 @@ public class MyComponent extends JComponent {
 		topLeftCar = new Car(0,0);
 		//randomCar = new Car(rand.nextInt(this.getWidth()-60), rand.nextInt(this.getHeight()-30));	
 	}
+	
+	public boolean reachedRightEdge(Car c) {
+		return(c.getxPos()+60 > this.getWidth());
+	}
 
 	public void paintComponent(Graphics g) {
-
-		topLeftCar.translate(5, 5);
+		if (!this.reachedRightEdge(topLeftCar)) {
+			topLeftCar.translate(5, 0);
+		}
 		randomCar = new Car(rand.nextInt(this.getWidth()-60), rand.nextInt(this.getHeight()-30));
 		bottomRightCar = new Car(this.getWidth()-60, this.getHeight()-30);
 
-		randomCar.draw(g);
+		//randomCar.draw(g);
 		topLeftCar.draw(g);
 		bottomRightCar.draw(g);
 
