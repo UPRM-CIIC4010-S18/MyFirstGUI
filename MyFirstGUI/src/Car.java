@@ -10,11 +10,14 @@ public class Car {
 	private int xPos;
 	private int yPos;
 	
+	private int direction;
+	
 	
 	public Car(int xPos, int yPos) {
 		super();
 		this.xPos = xPos;
 		this.yPos = yPos;
+		this.direction = 1; // Cars initially move right
 	}
 	
 	public int getxPos() {
@@ -30,6 +33,14 @@ public class Car {
 		this.yPos = yPos;
 	}
 	
+	public int getDirection() {
+		return direction;
+	}
+
+	public void setDirection(int direction) {
+		this.direction = direction;
+	}
+
 	public void translate(int deltax, int deltay) {
 		xPos += deltax;
 		yPos += deltay;
