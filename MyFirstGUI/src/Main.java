@@ -12,14 +12,17 @@ public class Main {
 		mainFrame.setTitle("My First GUI!!!");
 
 		RaceStage raceStage = new RaceStage();
-
+		
 		mainFrame.add(raceStage);
+
 
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		mainFrame.setVisible(true);
+		
+		raceStage.initStage();
 
-		while(true) {
+		while(!raceStage.someCarWon()) {
 
 			mainFrame.repaint();
 

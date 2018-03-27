@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
@@ -9,6 +10,9 @@ public class Car {
 	
 	private int xPos;
 	private int yPos;
+	private int height;
+	private int width;
+	private Color color;
 	
 	private int direction;
 	
@@ -18,6 +22,9 @@ public class Car {
 		this.xPos = xPos;
 		this.yPos = yPos;
 		this.direction = 1; // Cars initially move right
+		this.height = 30;
+		this.width = 60;
+		this.color = Color.MAGENTA;
 	}
 	
 	public int getxPos() {
@@ -41,6 +48,37 @@ public class Car {
 		this.direction = direction;
 	}
 
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+	
+	public Color getColor() {
+		return color;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
+	}
+
+	public static int getInitialWidth() {
+		return 60;
+	}
+
+	public static int getInitialHeight() {
+		return 30;
+	}
 	public void translate(int deltax, int deltay) {
 		xPos += deltax;
 		yPos += deltay;
@@ -62,6 +100,7 @@ public class Car {
 		g2.draw(frontWindow);
 		g2.draw(frontTire);
 		g2.draw(rearTire);
+		g2.setColor(this.color);
 		g2.draw(body);
 		
 	}
