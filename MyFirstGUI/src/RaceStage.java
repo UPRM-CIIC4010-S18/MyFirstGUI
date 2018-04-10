@@ -68,6 +68,7 @@ public class RaceStage extends JComponent {
 		for (int i=0; i<numCars; i++) {
 			cars[i].draw(g);
 			cars[i].translate(rand.nextInt(10), 0);
+			cars[i].setColor(Color.MAGENTA);
 		}
 		
 		int leadCarIndex = checkWinner();

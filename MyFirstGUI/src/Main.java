@@ -26,7 +26,7 @@ public class Main {
 
 			mainFrame.repaint();
 
-			Thread.sleep(25);
+			Thread.sleep(50);
 
 		}
 
