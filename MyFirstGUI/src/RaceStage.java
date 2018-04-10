@@ -14,7 +14,7 @@ public class RaceStage extends JComponent {
 
 	//private Car topLeftCar;
 
-	private Car[] cars;
+	private Vehicle[] cars;
 	//	private Car bottomRightCar;
 	//	private Car randomCar;	
 	private int numCars;
@@ -27,25 +27,28 @@ public class RaceStage extends JComponent {
 		//numCars = 8;
 		rand = new Random();
 		//topLeftCar = new Car(0,0);
-		cars = new Car[numCars];
+		cars = new Vehicle[numCars];
 		int nextY = 0;
 		for(int i=0; i<numCars; i++) {
-			if (i%2 == 1) {
+			if (i%3 == 0) {
+				cars[i] = new Car(0, nextY);
+			}
+			else if (i%3 == 1) {
 				cars[i] = new PoliceCar(0, nextY);
 			}
 			else {
-				cars[i] = new Car(0, nextY);
+				cars[i] = new Truck(0, nextY);
 			}
-			nextY += 40;
+			nextY += 50;
 		}
 
 	}
 
-	public boolean reachedRightEdge(Car c) {
+	public boolean reachedRightEdge(Vehicle c) {
 		return(c.getxPos()+60 >= this.getWidth());
 	}
 
-	public boolean reachedLeftEdge(Car c) {
+	public boolean reachedLeftEdge(Vehicle c) {
 		return(c.getxPos()<=0);
 	}
 	
