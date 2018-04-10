@@ -30,7 +30,12 @@ public class RaceStage extends JComponent {
 		cars = new Car[numCars];
 		int nextY = 0;
 		for(int i=0; i<numCars; i++) {
-			cars[i] = new Car(0, nextY);
+			if (i%2 == 1) {
+				cars[i] = new PoliceCar(0, nextY);
+			}
+			else {
+				cars[i] = new Car(0, nextY);
+			}
 			nextY += 40;
 		}
 
