@@ -6,7 +6,7 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.util.Random;
 
-public abstract class Vehicle {
+public abstract class Vehicle implements Raceable {
 	
 	private int xPos;
 	private int yPos;
