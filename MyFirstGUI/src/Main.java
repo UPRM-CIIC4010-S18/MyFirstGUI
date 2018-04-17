@@ -15,7 +15,6 @@ public class Main {
 		
 		mainFrame.add(raceStage);
 
-
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		mainFrame.setVisible(true);

@@ -18,6 +18,8 @@ public class RaceStage extends JComponent {
 	//	private Car bottomRightCar;
 	//	private Car randomCar;	
 	private int numCars;
+	
+	private boolean isInitialized = false;
 
 	public RaceStage() {
 		//randomCar = new Car(rand.nextInt(this.getWidth()-60), rand.nextInt(this.getHeight()-30));	
@@ -29,7 +31,9 @@ public class RaceStage extends JComponent {
 		//topLeftCar = new Car(0,0);
 		cars = new Raceable[numCars];
 		int nextY = 0;
-		for(int i=0; i<numCars; i++) {
+		cars[0] = new Turtle(0, nextY);
+		nextY += 50;
+		for(int i=1; i<numCars; i++) {
 			if (i%3 == 0) {
 				cars[i] = new Car(0, nextY);
 			}
@@ -41,6 +45,7 @@ public class RaceStage extends JComponent {
 			}
 			nextY += 50;
 		}
+		this.isInitialized = true;
 
 	}
 
@@ -73,7 +78,13 @@ public class RaceStage extends JComponent {
 
 	public void paintComponent(Graphics g) {
 
+		if (!isInitialized) return;
+		
 		for (int i=0; i<numCars; i++) {
+			if (cars[i] == null) {
+				System.out.println("Nul i" + i);
+				continue;
+			}
 			cars[i].draw(g);
 			cars[i].translate(rand.nextInt(10), 0);
 			cars[i].setColor(Color.MAGENTA);
